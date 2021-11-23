@@ -6,7 +6,8 @@ void	ft_stack_swap(t_stack *stack)
 	t_stack_el	*second;
 
 	first = stack->top;
-	second = stack->top->next;
+	if (first)
+		second = stack->top->next;
 	if (!first || !second)
 		return ;
 	first->next = second->next;

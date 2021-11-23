@@ -4,9 +4,9 @@ INCLUDES_DIR		=	includes
 
 SRCS_DIR			=	srcs
 
-SRCS				=	$(wildcard *.c) \
-							$(wildcard */*.c) \
-							$(wildcard */*/*.c)
+SRCS				=	$(wildcard $(SRCS_DIR)/*.c) \
+							$(wildcard $(SRCS_DIR)/*/*.c) \
+							$(wildcard $(SRCS_DIR)/*/*/*.c) 
 
 CC					=	gcc
 RM					=	rm -f
@@ -31,7 +31,4 @@ fclean:				clean
 
 re:					fclean $(NAME)
 
-.PHONY:				all clean fclean re bonus so
-
-dev:				all
-					./$(NAME)
+.PHONY:				all clean fclean re bonus 

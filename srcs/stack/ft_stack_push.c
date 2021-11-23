@@ -2,8 +2,6 @@
 
 void ft_stack_push(t_stack *stack, t_stack_el *new_el)
 {
-	t_stack_el	*temp;
-
 	if (!stack->length)
 	{
 		stack->top = new_el;

@@ -2,11 +2,15 @@
 
 int	main(int ac, char **av)
 {
-	t_stack *stack;
-	stack = ft_stack_init();
-	ft_stack_push(stack, ft_stack_create_el(3));
-	ft_stack_push(stack, ft_stack_create_el(7));
-	ft_stack_rotate(stack, UP);
-	ft_stack_print(stack, UP);
-	ft_stack_clear(stack);
+	t_stack *stacks[2];
+
+	ft_init_stacks(stacks);
+	if (!ft_parse(ac, av, stacks))
+		printf("Error \n");
+	PRINT
+	RA
+	RA
+	PRINT
+	ft_stack_clear(stacks[A]);
+	ft_stack_clear(stacks[B]);
 }
