@@ -5,7 +5,6 @@ int	ft_stack_pop(t_stack *stack)
 	int			poped;
 	t_stack_el	*last;
 	
-	printf ("len %d\n", stack->length);
 	if (0 < stack->length)
 	{
 		last = stack->top;
@@ -17,7 +16,6 @@ int	ft_stack_pop(t_stack *stack)
 		else
 			stack->bottom = NULL;
 		stack->length--;
-		printf("poped : %d\n", poped);
 		return (poped);
 	}
 	

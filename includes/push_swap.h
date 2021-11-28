@@ -27,6 +27,11 @@
 #define SS ft_sa(stacks);ft_sa(stacks);
 #define PRINT printf(">>>>>>>>>>>>><<<<<<<<<<<<<\n");ft_stack_print(stacks[A]);ft_stack_print(stacks[B]);printf(">>>>>>>>>>>>><<<<<<<<<<<<<\n\n");
 
+#define IS_EVEN(n) n % 2 == 0
+#define IS_ODD(n) n % 2 != 0
+
+int g_count;
+
 /*---------------[ DEFINE ]---------------*/
 
 typedef enum {
@@ -44,12 +49,13 @@ typedef struct s_stack {
 	t_stack_el	*top;
 	t_stack_el	*bottom;	
 	size_t		length;
+	int			id;
 }	t_stack;
 
 /*---------------[ STACK ]---------------*/
 
 t_stack_el	*ft_stack_create_el(int value);
-t_stack		*ft_stack_init(void);
+t_stack		*ft_stack_init(int id);
 int			ft_stack_pop(t_stack *stack);
 void		ft_stack_print(t_stack *stack);
 void		ft_stack_push(t_stack *stack, t_stack_el *new_el);
@@ -72,5 +78,12 @@ void	ft_sb(t_stack *stacks[2]);
 
 void	ft_init_stacks(t_stack *stacks[2]);
 int		ft_parse(int ac, char **av, t_stack *stacks[2]);
+
+/*---------------[ ALGORITHM ]---------------*/
+
+int		ft_find_median(t_stack *stack);
+int		ft_are_sorted(t_stack *stacks[2], int id);
+int		ft_divide_and_conquer(t_stack *stacks[2], int id);
+void	ft_algo_dq(t_stack *stacks[2]);
 
 #endif

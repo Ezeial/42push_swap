@@ -37,7 +37,7 @@ int	ft_parse(int ac, char **av, t_stack *stacks[2])
 	{
 		if (!ft_is_integer(*av))
 			return (0);
-		ft_stack_push(stacks[A], ft_stack_create_el(ft_atoi(*av)));
+		ft_stack_push(stacks[A], ft_stack_create_el(ft_atoi(*av))); // TODO : FIX LEAK IF PARSING FAIL.
 		av++;
 	}
 	return (1);
