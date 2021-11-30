@@ -2,14 +2,14 @@
 
 void	ft_algo_dq(t_stack *stacks[2])
 {
-	int current_stack;
+	int	current_stack;
 
 	current_stack = A;
 	while (!ft_are_sorted(stacks, -1))
 	{
-		if (ft_divide_and_conquer(stacks, current_stack))
-			current_stack = !current_stack;
+		ft_divide_and_conquer(stacks, current_stack);
 		PRINT
+		current_stack = !current_stack;
 	}
 	while (stacks[B]->top)
 		PA

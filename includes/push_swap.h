@@ -83,7 +83,7 @@ int		ft_parse(int ac, char **av, t_stack *stacks[2]);
 
 int		ft_find_median(t_stack *stack);
 int		ft_are_sorted(t_stack *stacks[2], int id);
-int		ft_divide_and_conquer(t_stack *stacks[2], int id);
+void	ft_divide_and_conquer(t_stack *stacks[2], int id);
 void	ft_algo_dq(t_stack *stacks[2]);
 
 #endif

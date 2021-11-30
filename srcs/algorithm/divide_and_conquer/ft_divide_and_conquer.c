@@ -41,60 +41,40 @@ static int ft_is_dividing_usefull(t_stack *stack, int med)
 	return (0);
 }
 
-int ft_divide_and_conquer(t_stack *stacks[2], int id)
+void	ft_divide_and_conquer(t_stack *stacks[2], int id)
 {	
 	int	med;
-	int useful;
 
 	med = ft_find_median(stacks[id]);
-	useful = 0;
 	if (id == A)
 	{
 		while (!ft_is_dividing_done(stacks[id], med))
 		{
 			if (stacks[id]->top->value == med)
-			{
 				SA
-				useful = 1;
-			}
 			if (stacks[id]->top->value < med)
 				PB
 			else
-			{
 				RA
-				useful = 1;
-			}
-		}		
+		}
 	}
 	if (id == B)
 	{
 		while (!ft_is_dividing_done(stacks[id], med))
 		{
 			if (stacks[id]->top->value == med)
-			{
 				SB
-				useful = 1;
-			}
 			if (stacks[id]->top->value > med)
 				PA
 			else
-			{
-				useful = 1;
 				RB
-			}
 		}
 	}
 	while (stacks[id]->top->value != med)
 	{
 		if (id == A)
-		{
 			RA
-			useful = 1;
-		}
-		else
-		{
-			useful = 1;
-		}
+		if (id == B)
+			RB
 	}
-	return (useful);
 }
