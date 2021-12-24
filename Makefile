@@ -10,7 +10,7 @@ SRCS				=	$(wildcard $(SRCS_DIR)/*.c) \
 
 CC					=	gcc
 RM					=	rm -f
-FLAGS				=	-Wall -Wextra -fsanitize=address -g3 -I./$(INCLUDES_DIR) -I./$(LIBFT_DIR) -L./$(LIBFT_DIR)
+FLAGS				=	-Wall -Wextra -fsanitize=address -g3 -I./$(INCLUDES_DIR) -I./$(LIBFT_DIR)/includes -L./$(LIBFT_DIR)
 
 
 NAME				=	push_swap

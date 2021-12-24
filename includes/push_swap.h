@@ -32,7 +32,7 @@
 
 int g_count;
 
-/*---------------[ DEFINE ]---------------*/
+/*---------------[ TYPEDEFS ]---------------*/
 
 typedef enum {
 	UP = 0,
@@ -52,6 +52,11 @@ typedef struct s_stack {
 	int			id;
 }	t_stack;
 
+typedef struct s_instance {
+	size_t *chunks;
+	t_stack *stacks[2];
+}	t_instance;
+
 /*---------------[ STACK ]---------------*/
 
 t_stack_el	*ft_stack_create_el(int value);
@@ -65,25 +70,25 @@ void		ft_stack_clear(t_stack *stack);
 
 /*				[ INSTRUCTION ]				*/
 
-void 	ft_pa(t_stack *stacks[2]);
-void 	ft_pb(t_stack *stacks[2]);
-void 	ft_ra(t_stack *stacks[2]);
-void 	ft_rb(t_stack *stacks[2]);
-void 	ft_rra(t_stack *stacks[2]);
-void 	ft_rrb(t_stack *stacks[2]);
-void	ft_sa(t_stack *stacks[2]);
-void	ft_sb(t_stack *stacks[2]);
+void 		ft_pa(t_stack *stacks[2]);
+void 		ft_pb(t_stack *stacks[2]);
+void 		ft_ra(t_stack *stacks[2]);
+void 		ft_rb(t_stack *stacks[2]);
+void 		ft_rra(t_stack *stacks[2]);
+void 		ft_rrb(t_stack *stacks[2]);
+void		ft_sa(t_stack *stacks[2]);
+void		ft_sb(t_stack *stacks[2]);
 
 /*---------------[ INITIALIZATION ]---------------*/
 
-void	ft_init_stacks(t_stack *stacks[2]);
-int		ft_parse(int ac, char **av, t_stack *stacks[2]);
+void		ft_init_stacks(t_stack *stacks[2]);
+int			ft_parse(int ac, char **av, t_stack *stacks[2]);
 
 /*---------------[ ALGORITHM ]---------------*/
 
-int		ft_find_median(t_stack *stack);
-int		ft_are_sorted(t_stack *stacks[2], int id);
-void	ft_divide_and_conquer(t_stack *stacks[2], int id);
-void	ft_algo_dq(t_stack *stacks[2]);
+int			ft_find_median(t_stack *stack);
+int			ft_are_sorted(t_stack *stacks[2], int id);
+void		ft_divide_and_conquer(t_stack *stacks[2], int id);
+void		ft_algo_dq(t_stack *stacks[2]);
 
 #endif
