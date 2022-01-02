@@ -1,6 +1,0 @@
-#include "push_swap.h"
-
-void 	ft_rrb(t_stack *stacks[2])
-{
-	ft_stack_rotate(stacks[B], DOWN);
-}
