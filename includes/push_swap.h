@@ -16,15 +16,20 @@
 typedef struct s_instance {
 	size_t	*chunks;
 	t_list	*stacks[2];
+	size_t	elem_len;
 }	t_instance;
-
-/*---------------[ STACK ]---------------*/
 
 /*---------------[ INITIALIZATION ]---------------*/
 
 int			ft_parse(int ac, char **av);
-void		ft_init_instance(int ac, char **av, t_instance *instance);
+int			ft_init_instance(int ac, char **av, t_instance *instance);
+
+/*---------------[ DESTRUCTION ]---------------*/
+
+int			ft_clear_stacks(t_instance *instance);
 
 /*---------------[ ALGORITHM ]---------------*/
+
+void	ft_algo(t_instance *instance);
 
 #endif

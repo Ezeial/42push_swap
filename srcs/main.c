@@ -1,24 +1,21 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void lstprint_el(void *el, void *arg)
-{
-	printf("[%d]\n", *((int *)el));
-}
 
-int *create_int(int data)
+void printel(size_t i, void *el, void *arg)
 {
-	int *new = malloc(sizeof(int));
-	*new = data;
-	return new;
+	(void)arg;
+	(void)i;
+	printf("[%d] - ", *((int *)el));
 }
 
 int	main(int ac, char **av)
 {
 	t_instance	instance;
 	
-	if (!ft_parse(ac, av))
-		return (1)
-	ft_lstclear(instance.stacks[A], free);
-	ft_lstclear(instance.stacks[B], free);
+	if (!ft_parse(ac, av) || !ft_init_instance(ac, av, &instance))
+		return (1);
+	ft_algo(&instance);
+	ft_clear_stacks(&instance);
+	return (0);
 }

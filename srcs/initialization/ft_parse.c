@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int	ft_parse(int ac, char **av, t_instance *instance)
+int	ft_parse(int ac, char **av)
 {
 	if (ac < 2)
 		return (0);
